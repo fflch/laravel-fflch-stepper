@@ -20,7 +20,6 @@ class LaravelFflchStepperServiceProvider extends ServiceProvider
         Repository $config
     ) {
         $this->loadViews();
-        $this->loadTranslations();
         $this->publishAssets();
     }
 
