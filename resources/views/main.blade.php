@@ -150,7 +150,7 @@ html {
         @endif
       ">
         <a href="#">
-          <div class="md-step-circle"><span></span></div>
+          <div class="md-step-circle">{!! \App\Models\Pedido::statusicons[$step->getName()] !!} </div>
           <div class="md-step-title">{{ $step->getName() }}</div>
           <div class="md-step-optional"><!-- Esse campo pode ser usado --></div>
         </a>
