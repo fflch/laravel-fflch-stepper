@@ -1,6 +1,4 @@
 <style type="text/css">
-<!--
-/* https://codepen.io/thdeux/pen/zBGNrM */
 
 html {
 	-webkit-font-smoothing: antialiased!important;
@@ -137,7 +135,11 @@ html {
 	right:50%;
 	margin-right:20px;
 }
--->
+.disabled {
+  pointer-events: none;
+  cursor: default;
+}
+
 </style>
 
 <div class="md-stepper-horizontal orange">
@@ -149,8 +151,8 @@ html {
           next
         @endif
       ">
-        <a href="#">
-          <div class="md-step-circle">{!! \App\Models\Pedido::statusicons[$step->getName()] !!} </div>
+	  <a href="#" class="disabled">
+          <div class="md-step-circle"><span>{{ Config::get('stepper')[$step->getName()] ?? '' }}</span></div>
           <div class="md-step-title">{{ $step->getName() }}</div>
           <div class="md-step-optional"><!-- Esse campo pode ser usado --></div>
         </a>
