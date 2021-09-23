@@ -2,20 +2,17 @@
 
 return [ 
     'steps' => [
-        [
-            'name'     => 'Em Elaboração',
+        'Em elaboração' => [
             'icon'     => '<i class="far fa-plus-square"></i>',
-            'optional' => ''
+            'description' => ''
         ],
-        [
-            'name'     => 'Em Análise',
+        'Análise' => [
             'icon'     => '<i class="fas fa-glasses"></i>',
-            'optional' => 'Setor de Graduação'
+            'description' => ''
         ],
-        [
-            'name'     => 'Finalizado',
+        'Finalizado' => [
             'icon'     => '<i class="fas fa-clipboard-check"></i>',
-            'optional' => ''
+            'description' => 'oooo'
         ],
     ]
 ];
