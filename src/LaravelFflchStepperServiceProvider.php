@@ -3,9 +3,6 @@
 namespace Fflch\LaravelFflchStepper;
 
 use Illuminate\Support\ServiceProvider;
-use Illuminate\Contracts\View\Factory;
-use Illuminate\Contracts\Config\Repository;
-use Illuminate\Contracts\Events\Dispatcher;
 
 class LaravelFflchStepperServiceProvider extends ServiceProvider
 {
@@ -14,13 +11,10 @@ class LaravelFflchStepperServiceProvider extends ServiceProvider
      *
      * @return void
      */
-    public function boot(
-        Factory $view,
-        Dispatcher $events,
-        Repository $config
-    ) {
+    public function boot() {
         $this->loadViews();
         $this->publishAssets();
+        $this->publishConfig();
     }
 
     /**
@@ -33,13 +27,11 @@ class LaravelFflchStepperServiceProvider extends ServiceProvider
         //
     }
 
-    private function packagePath($path)
-    {
+    private function packagePath($path){
         return __DIR__."/../$path";
     }
 
-    private function loadViews()
-    {
+    private function loadViews(){
         $viewsPath = $this->packagePath('resources/views');
         $this->loadViewsFrom($viewsPath, 'laravel-fflch-stepper');
         $this->publishes([
@@ -47,11 +39,16 @@ class LaravelFflchStepperServiceProvider extends ServiceProvider
         ], 'views');
     }
 
-    private function publishAssets()
-    {
+    private function publishAssets(){
         $this->publishes([
             $this->packagePath('resources/assets') => public_path('vendor/laravel-fflch-stepper'),
         ], 'assets');
+    }
+
+    private function publishConfig(){
+        $this->publishes([
+            $this->packagePath('config/laravel-fflch-stepper.php') => config_path('fflch-stepper.php'),
+        ], 'config');
     }
 
 }

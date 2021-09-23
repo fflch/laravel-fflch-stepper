@@ -143,7 +143,7 @@ html {
 </style>
 
 <div class="md-stepper-horizontal orange">
-    @foreach ($stepper as $step)
+    @foreach ( config('laravel-fflch-stepper.steps') as $step)
       <div class="md-step editable
         @if ($step->isCurrent())
           active
@@ -152,9 +152,9 @@ html {
         @endif
       ">
 	  <a href="#" class="disabled">
-          <div class="md-step-circle"><span>{{ Config::get('stepper')[$step->getName()] ?? '' }}</span></div>
-          <div class="md-step-title">{{ $step->getName() }}</div>
-          <div class="md-step-optional"><!-- Esse campo pode ser usado --></div>
+          <div class="md-step-circle"><span>{{ $step['icon'] }}</span></div>
+          <div class="md-step-title">{{ $step['name'] }}</div>
+          <div class="md-step-optional">{{ $step['optional'] }}</div>
         </a>
         <div class="md-step-bar-left"></div>
         <div class="md-step-bar-right"></div>
