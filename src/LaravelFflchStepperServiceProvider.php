@@ -47,7 +47,7 @@ class LaravelFflchStepperServiceProvider extends ServiceProvider
 
     private function publishConfig(){
         $this->publishes([
-            $this->packagePath('config/laravel-fflch-stepper.php') => config_path('fflch-stepper.php'),
+            $this->packagePath('config/laravel-fflch-stepper.php') => config_path('laravel-fflch-stepper.php'),
         ], 'config');
     }
 
