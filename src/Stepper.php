@@ -11,8 +11,8 @@ class Stepper extends LaravelStepper
     public function register()
     {
         $steps = config('laravel-fflch-stepper.steps');
-        foreach($steps as $step){
-            $this->addStep($step['name']);
+        foreach($steps as $key=>$value){
+            $this->addStep($key);
         }
     }
 }

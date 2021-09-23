@@ -142,22 +142,25 @@ html {
 
 </style>
 
-<div class="md-stepper-horizontal orange">
-    @foreach ( config('laravel-fflch-stepper.steps') as $step)
-      <div class="md-step editable
-        @if ($step->isCurrent())
-          active
-        @else
-          next
-        @endif
-      ">
-	  <a href="#" class="disabled">
-          <div class="md-step-circle"><span>{{ $step['icon'] }}</span></div>
-          <div class="md-step-title">{{ $step['name'] }}</div>
-          <div class="md-step-optional">{{ $step['optional'] }}</div>
-        </a>
-        <div class="md-step-bar-left"></div>
-        <div class="md-step-bar-right"></div>
-      </div>
-    @endforeach
+<div class="row" style="margin-bottom: 0.5em;">
+	<div class="col-sm">
+		<div class="md-stepper-horizontal orange">
+			@foreach ( $stepper as $step )
+			<div class="md-step
+				@if ($step->isCurrent())
+				active
+				@else
+				next
+				@endif
+			">
+					<div class="md-step-circle"><span>{!! config('laravel-fflch-stepper.steps')[$step->getName()]['icon'] ?? '' !!}</span></div>
+					<div class="md-step-title">{{ $step->getName() }}</div>
+					<div class="md-step-optional">{{ config('laravel-fflch-stepper.steps')[$step->getName()]['description'] ?? '' }}</div>
+				
+					<div class="md-step-bar-left"></div>
+					<div class="md-step-bar-right"></div>
+			</div>
+			@endforeach
+		</div>
+	</div>
 </div>
