@@ -1,7 +1,7 @@
 ## Conceito
 [<img src="/images/logo-fflch.png" width="80"/>](/images/logo-fflch.png)
 
-Biblioteca padronizada para laravel-stepper da FFLCH
+Biblioteca personalizada para laravel-stepper da FFLCH
 
 ## Biblioteca Utilizada
 - https://github.com/AXN-Informatique/laravel-stepper
