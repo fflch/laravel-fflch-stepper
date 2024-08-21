@@ -23,6 +23,6 @@
         }
     },
     "require": {
-        "axn/laravel-stepper": "^1.5.0"
+        "axn/laravel-stepper": "^1"
     }
 }
