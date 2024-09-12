@@ -22,13 +22,7 @@
             "Fflch\\LaravelFflchStepper\\" : "src"
         }
     },
-    "repositories": [
-        {
-          "type": "vcs",
-          "url": "https://github.com/thiagogomesverissimo/laravel-stepper.git"
-        }
-    ],
     "require": {
-        "axn/laravel-stepper": "1.8"
+        "fflch/laravel-stepper": "^1.8.1"
     }
 }
