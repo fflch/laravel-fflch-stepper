@@ -23,6 +23,6 @@
         }
     },
     "require": {
-        "fflch/laravel-stepper": "^1.8.1"
+        "axn/laravel-stepper": "^1.8"
     }
 }
